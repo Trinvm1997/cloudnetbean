@@ -1,12 +1,12 @@
 <html>
  <head>
-  <title>Database Test</title>
+  <title>ATN company</title>
  </head>
  <body>
- <?php echo '<p>DM khanh</p>'; 
+ <?php echo '<p>HOMEPAGE</p>'; 
  
  ?> 
-     <a href="ConnectToDB.php" target="_blank" >Connect database</a>
+     <a href="ConnectToDB.php" target="_blank" >View database</a>
      <br/>
      <a href="InsertData.php" target="_blank" >Insert data to the database</a>
      <br/>
