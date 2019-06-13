@@ -45,8 +45,8 @@ if($pdo === false){
      echo "ERROR: Could not connect Database";
 }
 
-$sql = "INSERT INTO revenue "
-        . " VALUES('$_POST[shopid]','$_POST[revenue]','$_POST[toysold]','$_POST[toyleft]','$_POST[timecheck]')";
+$sql = "INSERT INTO revenue(shopid, revenue, toysold, toyleft) "
+        . " VALUES('$_POST[shopid]','$_POST[revenue]','$_POST[toysold]','$_POST[toyleft]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
  if (is_null($_POST[shopid])) {
