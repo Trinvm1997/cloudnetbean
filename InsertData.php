@@ -12,16 +12,14 @@ list-style: none;
 <body>
 <h1>INSERT DATA TO DATABASE</h1>
 <h2>Enter data into company's database</h2>
-<ul>
-    <form name="InsertData" action="InsertData.php" method="POST" >
-<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
-<li>Revenue:</li><li><input type="text" name="revenue" /></li>
-<li>Toys sold:</li><li><input type="text" name="toysold" /></li>
-<li>Toys left:</li><li><input type="text" name="toyleft" /></li>
-<li>Last time checked:</li><li><input type="text" name="timecheck" /></li>
-<li><input type="submit" /></li>
-</form>
-</ul>
+    <table name="InsertData" action="InsertData.php" method="POST" >
+    <tr><td>Shop ID:</td><td><input type="text" name="shopid" /></td></tr>
+    <tr><td>Revenue:</td><td><input type="text" name="revenue" /></td></tr>
+    <tr><td>Toys sold:</td><td><input type="text" name="toysold" /></td></tr>
+    <tr><td>Toys left:</td><td><input type="text" name="toyleft" /></td></tr>
+    <tr><td>Last time checked:</td><td><input type="text" name="timecheck" /></td></tr>
+    <li><input type="submit" /></li>
+    </table>
 
 <?php
 
@@ -60,6 +58,9 @@ $stmt = $pdo->prepare($sql);
         echo "Error inserting record: ";
     }
  }
+
+
+
 ?>
 </body>
 </html>
