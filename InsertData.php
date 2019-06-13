@@ -18,8 +18,9 @@ list-style: none;
     <tr><td>Toys sold:</td><td><input type="text" name="toysold" /></td></tr>
     <tr><td>Toys left:</td><td><input type="text" name="toyleft" /></td></tr>
     <tr><td>Last time checked:</td><td><input type="text" name="timecheck" /></td></tr>
-    <tr><input type="submit" /></tr>
+    
     </table>
+    <tr><input type="submit" /></tr>
 
 <?php
 
