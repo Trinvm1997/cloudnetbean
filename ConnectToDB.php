@@ -2,6 +2,8 @@
 <html>
 <body>
 
+    
+
 <h1>DATABASE CONNECTION</h1>
 
 <?php
@@ -35,8 +37,19 @@ $stmt = $pdo->prepare($sql);
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 $resultSet = $stmt->fetchAll();
+
 echo '<p>Revenue information:</p>';
-foreach ($resultSet as $row) {
+echo "<table>";
+
+while($row = mysql_fetch_array($resultSet)){   //Creates a loop to loop through results
+echo "<tr><td>" . $row['shopid'] . "</td><td>" . $row['revenue'] . "</td><td>" . $row['toysold'] . "</td><td>" . $row['toyleft'] . "</td><td>" . $row['timecheck'] . "</td></tr>";  //$row['index'] the index here is a field name
+}
+
+echo "</table>"; //Close the table in HTML
+
+mysql_close(); //Make sure to close out the database connection
+
+/*foreach ($resultSet as $row) {
 	echo $row['shopid'];
         echo "    ";
         echo $row['revenue'];
@@ -48,7 +61,9 @@ foreach ($resultSet as $row) {
         echo $row['timecheck'];
         echo "<br/>";
 }
+*/
 
 ?>
+
 </body>
 </html>
