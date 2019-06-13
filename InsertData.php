@@ -12,13 +12,13 @@ list-style: none;
 <body>
 <h1>INSERT DATA TO DATABASE</h1>
 <h2>Enter data into company's database</h2>
-    <table name="InsertData" action="InsertData.php" method="POST" >
+    <table name="InsertData" action="InsertData.php" method="POST" border="1">
     <tr><td>Shop ID:</td><td><input type="text" name="shopid" /></td></tr>
     <tr><td>Revenue:</td><td><input type="text" name="revenue" /></td></tr>
     <tr><td>Toys sold:</td><td><input type="text" name="toysold" /></td></tr>
     <tr><td>Toys left:</td><td><input type="text" name="toyleft" /></td></tr>
     <tr><td>Last time checked:</td><td><input type="text" name="timecheck" /></td></tr>
-    <li><input type="submit" /></li>
+    <tr><input type="submit" /></tr>
     </table>
 
 <?php
