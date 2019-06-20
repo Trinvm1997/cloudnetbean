@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<title>Insert data to PostgreSQL with php - creating a simple web application</title>
+<title>Inserting page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style>
 li {
@@ -11,16 +11,16 @@ list-style: none;
 </head>
 <body>
 <h1>INSERT DATA TO DATABASE</h1>
-<h2>Enter data into student table</h2>
-<ul>
-    <form name="InsertData" action="InsertData.php" method="POST" >
-<li>Student ID:</li><li><input type="text" name="StudentID" /></li>
-<li>Full Name:</li><li><input type="text" name="fname" /></li>
-<li>Email:</li><li><input type="text" name="email" /></li>
-<li>Class:</li><li><input type="text" name="classname" /></li>
-<li><input type="submit" /></li>
-</form>
-</ul>
+<h2>Enter data into company's database</h2>
+    <table name="InsertData" action="InsertData.php" method="POST" border="1">
+    <tr><td>Shop ID:</td><td><input type="text" name="shopid" /></td></tr>
+    <tr><td>Revenue:</td><td><input type="text" name="revenue" /></td></tr>
+    <tr><td>Toys sold:</td><td><input type="text" name="toysold" /></td></tr>
+    <tr><td>Toys left:</td><td><input type="text" name="toyleft" /></td></tr>
+    <tr><td>Last time checked:</td><td><input type="text" name="timecheck" /></td></tr>
+    
+    </table>
+    <tr><input type="submit" /></tr>
 
 <?php
 
@@ -44,21 +44,12 @@ if($pdo === false){
      echo "ERROR: Could not connect Database";
 }
 
-//Khởi tạo Prepared Statement
-//$stmt = $pdo->prepare('INSERT INTO student (stuid, fname, email, classname) values (:id, :name, :email, :class)');
-
-//$stmt->bindParam(':id','SV03');
-//$stmt->bindParam(':name','Ho Hong Linh');
-//$stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
-//$stmt->bindParam(':class', 'GCD018');
-//$stmt->execute();
-//$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
-$sql = "INSERT INTO student(stuid, fname, email, classname)"
-        . " VALUES('$_POST[StudentID]','$_POST[fname]','$_POST[email]','$_POST[classname]')";
+$sql = "INSERT INTO revenue(shopid, revenue, toysold, toyleft) "
+        . " VALUES('$_POST[shopid]','$_POST[revenue]','$_POST[toysold]','$_POST[toyleft]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
- if (is_null($_POST[StudentID])) {
-   echo "StudentID must be not null";
+ if (is_null($_POST[shopid])) {
+   echo "shopid must be not null";
  }
  else
  {
@@ -68,6 +59,9 @@ $stmt = $pdo->prepare($sql);
         echo "Error inserting record: ";
     }
  }
+
+
+
 ?>
 </body>
 </html>

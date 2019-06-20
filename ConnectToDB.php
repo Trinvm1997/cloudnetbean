@@ -2,6 +2,8 @@
 <html>
 <body>
 
+    
+
 <h1>DATABASE CONNECTION</h1>
 
 <?php
@@ -29,24 +31,39 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
-$sql = "SELECT * FROM student ORDER BY stuid";
+$sql = "SELECT * FROM revenue ORDER BY shopid";
 $stmt = $pdo->prepare($sql);
 //Thiết lập kiểu dữ liệu trả về
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 $resultSet = $stmt->fetchAll();
-echo '<p>Students information:</p>';
-foreach ($resultSet as $row) {
-	echo $row['stuid'];
-        echo "    ";
-        echo $row['fname'];
-        echo "    ";
-        echo $row['email'];
-        echo "    ";
-        echo $row['classname'];
-        echo "<br/>";
+
+echo '<p>Revenue information:</p>';
+echo "<table>";
+
+while($row = mysqli_fetch_array( $resultSet)){   //Creates a loop to loop through results
+echo "<tr><td>" . $row['shopid'] . "</td><td>" . $row['revenue'] . "</td><td>" . $row['toysold'] . "</td><td>" . $row['toyleft'] . "</td><td>" . $row['timecheck'] . "</td></tr>";  //$row['index'] the index here is a field name
 }
 
+echo "</table>"; //Close the table in HTML
+
+mysql_close(); //Make sure to close out the database connection
+
+/*foreach ($resultSet as $row) {
+	echo $row['shopid'];
+        echo "    ";
+        echo $row['revenue'];
+        echo "    ";
+        echo $row['toysold'];
+        echo "    ";
+        echo $row['toyleft'];
+        echo "    ";
+        echo $row['timecheck'];
+        echo "<br/>";
+}
+*/
+
 ?>
+
 </body>
 </html>
