@@ -23,9 +23,9 @@
 			<h1>UPDATE DATA TO DATABASE</h1>
 			<ul style="list-style-type: none">
 			<form name="UpdateData" action="UpdateData.php" method="POST" >
-			<li>Shop ID:</li><li><input type="text" name="shopid1" /></li>
-			<li>Accountant:</li><li><input type="text" name="accountant1" /></li>
-			<li>Revenue:</li><li><input type="text" name="revenue1" /></li>
+			<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
+			<li>Accountant:</li><li><input type="text" name="accountant" /></li>
+			<li>Revenue:</li><li><input type="text" name="revenue" /></li>
 			<li><input type="submit" /></li>
 			</form>
 			</ul>
@@ -53,14 +53,14 @@
 			}  
 
 			$sql = 'UPDATE asm2 '
-			                . 'SET accountant = :accountant1, revenue = :revenue1'
-			                . 'WHERE shopid = :shopid1';
+			                . 'SET accountant = '$_POST[accountant]', revenue = '$_POST[revenue]''
+			                . 'WHERE shopid = '$_POST[shopid]'';
 			 
 			      $stmt = $pdo->prepare($sql);
 			      //bind values to the statement
-			       	$stmt->bindValue(':accountant1', accountant);
-			        $stmt->bindValue(':revenue1', revenue);
-			        $stmt->bindValue(':shopid1', shopid);
+			       	$stmt->bindValue(shopid, '$_POST[shopid]');
+			        $stmt->bindValue(accountant, '$_POST[accountant]');
+			        $stmt->bindValue(revenue, '$_POST[revenue]');
 			// update data in the database
 			        $stmt->execute();
 
