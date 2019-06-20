@@ -42,7 +42,7 @@
 		   		));
 			}  
 
-			$sql = "DELETE FROM student WHERE stuid = 'SV02'";
+			$sql = "DELETE FROM revenue WHERE shopid = 1";
 			$stmt = $pdo->prepare($sql);
 			if($stmt->execute() == TRUE){
 		    	echo "Record deleted successfully.";
