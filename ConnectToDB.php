@@ -52,22 +52,22 @@
 		$resultSet = $stmt->fetchAll();
 
 		echo "revenue information:<br/>";
-		echo "<table>";
+		echo "<table border="1">";
 		echo "<tr>";
 		echo "<th>";
-		echo $row['shopid'];
+		echo "<b>shop ID<b>";
         echo "</th>";
         echo "<th>";
-        echo $row['revenue'];
+        echo "<b>revenue<b>";
         echo "</th>";
         echo "<th>";
-        echo $row['toysold'];
+        echo "<b>toy sold<b>";
         echo "</th>";
         echo "<th>";
-        echo $row['toyleft'];
+        echo "<b>toy left<b>";
         echo "</th>";
         echo "<th>";
-        echo $row['timecheck'];
+        echo "<b>last time check<b>";
         echo "</th>";
         echo "</tr>";
 		foreach ($resultSet as $row) {
