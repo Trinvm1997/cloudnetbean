@@ -52,27 +52,30 @@
 				));
 			}  
 
-			//$sql = 'UPDATE student '
-			//                . 'SET name = :name, '
-			//                . 'WHERE ID = :id';
-			// 
-			//      $stmt = $pdo->prepare($sql);
-			//      //bind values to the statement
-			//        $stmt->bindValue(':name', 'Lee');
-			//        $stmt->bindValue(':id', 'SV02');
+			$sql = 'UPDATE asm2 '
+			                . 'SET accountant = :accountant1, revenue = :revenue1'
+			                . 'WHERE shopid = :shopid1';
+			 
+			      $stmt = $pdo->prepare($sql);
+			      //bind values to the statement
+			       	$stmt->bindValue(':accountant1', accountant);
+			        $stmt->bindValue(':revenue1', revenue);
+			        $stmt->bindValue(':shopid1', shopid);
 			// update data in the database
-			//        $stmt->execute();
+			        $stmt->execute();
 
 			// return the number of row affected
-			//return $stmt->rowCount();
-			$sql = "UPDATE asm2 SET accountant = '$_POST[accountant1]', revenue = '$_POST[revenue1]' WHERE shopid = '$_POST[shopid1]'";
+			//return 
+			$stmt->rowCount();
+
+			/*$sql = "UPDATE asm2 SET accountant = '$_POST[accountant1]', revenue = '$_POST[revenue1]' WHERE shopid = '$_POST[shopid1]'";
 			$stmt = $pdo->prepare($sql);
 			if($stmt->execute() == TRUE){
 				echo "Record updated successfully.";
 			}
 			else{
 				echo "Error updating record. ";
-			}
+			}*/
 			?>
 		</div>
 
