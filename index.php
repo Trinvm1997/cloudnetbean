@@ -9,13 +9,13 @@
 		<div class="w3-container">
 			<div class="w3-bar w3-black w3-card">
 				<a href="index.php" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-				<a href="ConnectToDB.php" class="w3-bar-item w3-button w3-padding-large">VIEW</a>
-    			<a href="InsertData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small">INSERT</a>
-    			<a href="UpdateData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small">UPDATE</a>
-    			<a href="DeleteData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DELETE</a>
+				<a href="ConnectToDB.php" class="w3-bar-item w3-button w3-padding-large w3-right">VIEW</a>
+    			<a href="InsertData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">INSERT</a>
+    			<a href="UpdateData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">UPDATE</a>
+    			<a href="DeleteData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">DELETE</a>
 			</div>
 		</div>
-		
+
 		<footer class="w3-container w3-padding w3-center w3-opacity w3-light-grey w3-xlarge">
 			<i class="fa fa-facebook-official w3-hover-opacity"></i>
 			<i class="fa fa-instagram w3-hover-opacity"></i>
