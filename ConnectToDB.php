@@ -52,7 +52,7 @@
 		$resultSet = $stmt->fetchAll();
 
 		echo "revenue information:<br/>";
-		echo "<table border="1">";
+		echo "<table>";
 		echo "<tr>";
 		echo "<th>";
 		echo "<b>shop ID<b>";
