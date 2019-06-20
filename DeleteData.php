@@ -20,7 +20,14 @@
 		</div>
 
 		<div class="w3-container">
-			<h1>INSERT DATA TO DATABASE</h1>
+			<h1>DELETE DATA FROM DATABASE</h1>
+			<ul style="list-style-type: none">
+			<form name="DeleteData" action="DeleteData.php" method="POST" >
+			<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
+			<li><input type="submit" /></li>
+			</form>
+			</ul>
+
 			<?php
 			ini_set('display_errors', 1);
 			echo "Insert database!";
@@ -43,7 +50,7 @@
 				));
 			}  
 
-			$sql = "DELETE FROM asm2 WHERE shopid = 'shop01'";
+			$sql = "DELETE FROM asm2 WHERE shopid = '$_POST[shopid]'";
 			$stmt = $pdo->prepare($sql);
 			if($stmt->execute() == TRUE){
 				echo "Record deleted successfully.";
