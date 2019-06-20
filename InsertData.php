@@ -18,7 +18,7 @@
 		</div>
 	</div>
 
-	<div class="w3-container">
+	<div class="w3-container w3-display-middle">
 		<table name="InsertData" action="InsertData.php" method="POST" border="1">
 		<tr><td>Shop ID:</td><td><input type="text" name="shopid" /></td></tr>
 		<tr><td>Revenue:</td><td><input type="text" name="revenue" /></td></tr>
@@ -26,7 +26,7 @@
 		<tr><td>Toys left:</td><td><input type="text" name="toyleft" /></td></tr>
 		<tr><td>Last time checked:</td><td><input type="text" name="timecheck" /></td></tr>
 		</table>
-		<tr><input type="submit" /></tr>
+		<input type="submit" />
 
 		<?php
 		if (empty(getenv("DATABASE_URL"))){
