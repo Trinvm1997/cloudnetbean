@@ -52,7 +52,7 @@
 				));
 			}  
 
-			$sql = 'UPDATE asm2 '
+			/*$sql = 'UPDATE asm2 '
 			                . 'SET accountant = '$_POST[accountant]', revenue = '$_POST[revenue]''
 			                . 'WHERE shopid = '$_POST[shopid]'';
 			 
@@ -66,16 +66,16 @@
 
 			// return the number of row affected
 			//return 
-			$stmt->rowCount();
+			$stmt->rowCount();*/
 
-			/*$sql = "UPDATE asm2 SET accountant = '$_POST[accountant1]', revenue = '$_POST[revenue1]' WHERE shopid = '$_POST[shopid1]'";
+			$sql = "UPDATE asm2 SET accountant = '$_POST[accountant1]', revenue = '$_POST[revenue1]' WHERE shopid = '$_POST[shopid1]'";
 			$stmt = $pdo->prepare($sql);
 			if($stmt->execute() == TRUE){
 				echo "Record updated successfully.";
 			}
 			else{
 				echo "Error updating record. ";
-			}*/
+			}
 			?>
 		</div>
 
