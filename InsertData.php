@@ -12,11 +12,11 @@
 	<body>
 		<div class="w3-container">
 			<div class="w3-bar w3-black w3-card">
-				<a href="index.php" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-				<a href="ConnectToDB.php" class="w3-bar-item w3-button w3-padding-large w3-right">VIEW</a>
-    			<a href="InsertData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">INSERT</a>
-    			<a href="UpdateData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">UPDATE</a>
-    			<a href="DeleteData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">DELETE</a>
+				<a href="index.php" class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue">HOME</a>
+				<a href="ConnectToDB.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hover-text-blue">VIEW</a>
+    			<a href="InsertData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right w3-hover-text-blue">INSERT</a>
+    			<a href="UpdateData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right w3-hover-text-blue">UPDATE</a>
+    			<a href="DeleteData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right w3-hover-text-blue">DELETE</a>
 			</div>
 		</div>
 
@@ -24,7 +24,7 @@
 			<h1>INSERT DATA TO DATABASE</h1>
 			<ul style="list-style-type: none">
 			<form name="InsertData" action="InsertData.php" method="POST" >
-			<li style="list-style-type: none">Shop ID:</li><li><input type="text" name="shopid" /></li>
+			<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
 			<li>Accountant:</li><li><input type="text" name="accountant" /></li>
 			<li>Revenue:</li><li><input type="text" name="revenue" /></li>
 			<li><input type="submit" /></li>
