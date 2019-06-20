@@ -22,7 +22,7 @@
   		<img class="w3-image" src="https://cdn.freebiesupply.com/logos/large/2x/atn-2-logo-png-transparent.png" alt="Hamburger Catering" width="100%" height="800">
 	</header>
 
- 	<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-green w3-xlarge">
+ 	<footer class="w3-container w3-bottom w3-padding-64 w3-center w3-opacity w3-green w3-xlarge">
   		<p>
   		<i class="fa fa-facebook-official w3-hover-opacity"></i>
   		<i class="fa fa-instagram w3-hover-opacity"></i>
