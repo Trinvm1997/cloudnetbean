@@ -20,7 +20,16 @@
 		</div>
 
 		<div class="w3-container">
-			<h1>INSERT DATA TO DATABASE</h1>
+			<h1>UPDATE DATA TO DATABASE</h1>
+			<ul style="list-style-type: none">
+			<form name="InsertData" action="InsertData.php" method="POST" >
+			<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
+			<li>Accountant:</li><li><input type="text" name="accountant" /></li>
+			<li>Revenue:</li><li><input type="text" name="revenue" /></li>
+			<li><input type="submit" /></li>
+			</form>
+			</ul>
+
 			<?php
 			ini_set('display_errors', 1);
 			echo "Update database!";
@@ -56,7 +65,7 @@
 
 			// return the number of row affected
 			//return $stmt->rowCount();
-			$sql = "UPDATE asm2 SET accountant = 'Lee Chan Do' WHERE shopid = 'shop01'";
+			$sql = "UPDATE asm2 SET accountant = '$_POST[accountant]', revenue = '$_POST[revenue]' WHERE shopid = '$_POST[shopid]'";
 			$stmt = $pdo->prepare($sql);
 			if($stmt->execute() == TRUE){
 				echo "Record updated successfully.";
