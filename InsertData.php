@@ -22,7 +22,7 @@
 
 		<div class="w3-container">
 			<h1>INSERT DATA TO DATABASE</h1>
-			<ul>
+			<ul style="list-style-type: none">
 			<form name="InsertData" action="InsertData.php" method="POST" >
 			<li style="list-style-type: none">Shop ID:</li><li><input type="text" name="shopid" /></li>
 			<li>Accountant:</li><li><input type="text" name="accountant" /></li>
