@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<head>Viewing database</head>
 
@@ -37,8 +38,8 @@
 		echo '<p>Shop Revenue Report:</p>';
 		?>
 
-		<div id="container">
-			<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable">
+		<div class="w3-responsive ">
+			<table class="w3-container w3-table w3-striped w3-bordered w3-border w3-hoverable">
 				<thead>
 				<tr>
 				<th>Shop ID</th>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<head>
 		<title>Insert data to PostgreSQL with php - creating a simple web application</title>
@@ -13,15 +14,13 @@
 
 	<body>
 		<h1>INSERT DATA TO DATABASE</h1>
-			<h2>Enter data into student table</h2>
-		<ul>
-		<form name="InsertData" action="InsertData.php" method="POST" >
-		<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
-		<li>Accountant:</li><li><input type="text" name="accountant" /></li>
-		<li>Revenue:</li><li><input type="text" name="revenue" /></li>
-		<li><input type="submit" /></li>
-		</form>
-		</ul>
+		<table class="w3-container w3-table w3-striped w3-bordered w3-border w3-hoverable" 
+		name="InsertData" action="InsertData.php" method="POST" >
+		<tr><td>Shop ID:</td><td><input type="text" name="shopid" /></td></tr>
+		<tr><td>Accountant:</td><td><input type="text" name="accountant" /></td></tr>
+		<tr><td>Revenue:</td><td><input type="text" name="revenue" /></td></tr>
+		<tr><td><input type="submit" /></td></tr>
+		</table>
 
 		<?php
 		if (empty(getenv("DATABASE_URL"))){
