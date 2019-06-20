@@ -50,7 +50,7 @@
 
 		echo "revenue information:<br/>";
 		echo "<table border="1">";
-		echo "<tr>";
+		/*echo "<tr>";
 		echo "<th>";
 		echo "<b>shop ID<b>";
         echo "</th>";
@@ -66,7 +66,7 @@
         echo "<th>";
         echo "<b>last time check<b>";
         echo "</th>";
-        echo "</tr>";
+        echo "</tr>";*/
 		foreach ($resultSet as $row) {
 			echo "<tr>";
 			echo "<td>";
