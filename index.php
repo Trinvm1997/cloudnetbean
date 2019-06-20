@@ -19,7 +19,7 @@
 	</div>
 
 	<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-  		<img class="w3-image" src="https://cdn.freebiesupply.com/logos/large/2x/atn-2-logo-png-transparent.png" alt="Hamburger Catering" width="100%" height="800">
+  		<img class="w3-image" src="https://cdn.freebiesupply.com/logos/large/2x/atn-2-logo-png-transparent.png" alt="logo" width="100%" height="800">
 	</header>
 
  	<footer class="w3-container w3-bottom w3-padding w3-center w3-opacity w3-green w3-xlarge">
