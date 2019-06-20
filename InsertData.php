@@ -26,7 +26,7 @@
 		<tr><td>Toys left:</td><td><input type="text" name="toyleft" /></td></tr>
 		<tr><td>Last time checked:</td><td><input type="text" name="timecheck" /></td></tr>
 		</table>
-		<input type="submit" />
+		<input type="submit">
 
 		<?php
 		if (empty(getenv("DATABASE_URL"))){
