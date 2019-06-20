@@ -22,6 +22,7 @@
 
 		<div class="w3-container">
 			<h1>INSERT DATA TO DATABASE</h1>
+			<?php
 			<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable" 
 			name="InsertData" action="InsertData.php" method="POST" >
 			<tr><td>Shop ID:</td><td><input type="text" name="shopid" /></td></tr>
@@ -29,7 +30,8 @@
 			<tr><td>Revenue:</td><td><input type="text" name="revenue" /></td></tr>
 			</table>
 			<input type="submit" />
-
+			?>
+			
 			<?php
 			if (empty(getenv("DATABASE_URL"))){
 				echo '<p>The DB does not exist</p>';
