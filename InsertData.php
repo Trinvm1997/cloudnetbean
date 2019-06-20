@@ -52,7 +52,7 @@
     	. " VALUES('$_POST[id]','$_POST[revenue]','$_POST[toysold]','$_POST[toyleft]')";
 		$stmt = $pdo->prepare($sql);
 		//$stmt->execute();
-			if (is_null($_POST[sid])) {
+			if (is_null($_POST[id])) {
 				echo "shopid must be not null";
 			} else {
 			if($stmt->execute() == TRUE){
