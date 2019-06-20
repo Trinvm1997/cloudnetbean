@@ -23,9 +23,9 @@
 			<h1>UPDATE DATA TO DATABASE</h1>
 			<ul style="list-style-type: none">
 			<form name="UpdateData" action="UpdateData.php" method="POST" >
-			<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
-			<li>Accountant:</li><li><input type="text" name="accountant" /></li>
-			<li>Revenue:</li><li><input type="text" name="revenue" /></li>
+			<li>Shop ID:</li><li><input type="text" name="shopid1" /></li>
+			<li>Accountant:</li><li><input type="text" name="accountant1" /></li>
+			<li>Revenue:</li><li><input type="text" name="revenue1" /></li>
 			<li><input type="submit" /></li>
 			</form>
 			</ul>
@@ -65,7 +65,7 @@
 
 			// return the number of row affected
 			//return $stmt->rowCount();
-			$sql = "UPDATE asm2 SET accountant = '$_POST[accountant]', revenue = '$_POST[revenue]' WHERE shopid = '$_POST[shopid]'";
+			$sql = "UPDATE asm2 SET accountant = '$_POST[accountant1]', revenue = '$_POST[revenue1]' WHERE shopid = '$_POST[shopid1]'";
 			$stmt = $pdo->prepare($sql);
 			if($stmt->execute() == TRUE){
 				echo "Record updated successfully.";
