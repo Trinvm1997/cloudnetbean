@@ -53,17 +53,41 @@
 
 		echo "revenue information:<br/>";
 		echo "<table>";
+		echo "<tr>";
+		echo "<th>";
+		echo $row['shopid'];
+        echo "</th>";
+        echo "<th>";
+        echo $row['revenue'];
+        echo "</th>";
+        echo "<th>";
+        echo $row['toysold'];
+        echo "</th>";
+        echo "<th>";
+        echo $row['toyleft'];
+        echo "</th>";
+        echo "<th>";
+        echo $row['timecheck'];
+        echo "</th>";
+        echo "</tr>";
 		foreach ($resultSet as $row) {
+			echo "<tr>";
+			echo "<td>";
 			echo $row['shopid'];
-	        echo "    ";
+	        echo "</td>";
+	        echo "<td>";
 	        echo $row['revenue'];
-	        echo "    ";
+	        echo "</td>";
+	        echo "<td>";
 	        echo $row['toysold'];
-	        echo "    ";
+	        echo "</td>";
+	        echo "<td>";
 	        echo $row['toyleft'];
-	        echo "    ";
+	        echo "</td>";
+	        echo "<td>";
 	        echo $row['timecheck'];
-	        echo "<br/>";
+	        echo "</td>";
+	        echo "</tr>";
 		}
 		echo "</table>";
 
