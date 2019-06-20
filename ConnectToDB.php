@@ -1,102 +1,73 @@
+<!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="/w3.css">
-<link rel="stylesheet" href="/font-awesome.min.css">
-	<head>
-		<title>ATN company - DATABASE</title>
-	</head>
+<body>
 
-	<div class="w3-top">
-		<div class="w3-bar w3-green w3-opacity w3-padding w3-card" style="letter-spacing:4px;">
-			<a href="index.php" class="w3-bar-item w3-button">ATN company</a>
-			<!-- Right-sided navbar links. Hide them on small screens -->
-			<div class="w3-right w3-hide-small">
-					<a href="ConnectToDB.php" class="w3-bar-item w3-button">VIEW</a>
-					<a href="InsertData.php" class="w3-bar-item w3-button">INSERT</a>
-					<a href="UpdateData.php" class="w3-bar-item w3-button">UPDATE</a>
-					<a href="DeleteData.php" class="w3-bar-item w3-button">DELETE</a>
-			</div>
-		</div>
-	</div>
+<h1>DATABASE CONNECTION</h1>
 
-	<body>
-		<h1>DATABASE CONNECTION</h1>
+<?php
+ini_set('display_errors', 1);
+echo "Hello Cloud computing class 0818!";
+?>
 
-		<?php
-		ini_set('display_errors', 1);
-		?>
+<?php
 
-		<?php
-		if (empty(getenv("DATABASE_URL"))){
-    		$pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
-		} else {
-     		echo getenv("dbname");
-   			$db = parse_url(getenv("DATABASE_URL"));
-   			$pdo = new PDO("pgsql:" . sprintf(
-        	"host=ec2-23-21-129-125.compute-1.amazonaws.com;port=5432;user=lrqgdgzdowigqc;password=8652e83044024491ba444c1d161044f803b99c9101bd7d129e8a6a6db78b5bea;dbname=deh478l9lii3uq",
-        	$db["host"],
-        	$db["port"],
-        	$db["user"],
-        	$db["pass"],
-        	ltrim($db["path"], "/")
-   			));
-		}  
 
-		$sql = "SELECT * FROM revenue";
-		$stmt = $pdo->prepare($sql);
-		//Thiết lập kiểu dữ liệu trả về
-		$stmt->setFetchMode(PDO::FETCH_ASSOC);
-		$stmt->execute();
-		$resultSet = $stmt->fetchAll();
+if (empty(getenv("DATABASE_URL"))){
+    echo '<p>The DB does not exist</p>';
+    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
+}  else {
+     echo '<p>The DB exists</p>';
+     echo getenv("dbname");
+   $db = parse_url(getenv("DATABASE_URL"));
+   $pdo = new PDO("pgsql:" . sprintf(
+        "host=ec2-174-129-240-67.compute-1.amazonaws.com;port=5432;user=wrflrxtavasvqh;password=fbfef36049fbd28f1200e3a775a389e014838e86522765e67782f9cf7a3f516b;dbname=d3mmhribgmc6bf",
+        $db["host"],
+        $db["port"],
+        $db["user"],
+        $db["pass"],
+        ltrim($db["path"], "/")
+   ));
+}  
 
-		echo "revenue information:<br/>";
-		echo "<table border="1">";
-		echo "<tr>";
-		echo "<th>";
-		echo "<b>shop ID<b>";
-        echo "</th>";
-        echo "<th>";
-        echo "<b>revenue<b>";
-        echo "</th>";
-        echo "<th>";
-        echo "<b>toy sold<b>";
-        echo "</th>";
-        echo "<th>";
-        echo "<b>toy left<b>";
-        echo "</th>";
-        echo "<th>";
-        echo "<b>last time check<b>";
-        echo "</th>";
-        echo "</tr>";
-		foreach ($resultSet as $row) {
-			echo "<tr>";
-			echo "<td>";
-			echo $row['shopid'];
-	        echo "</td>";
-	        echo "<td>";
-	        echo $row['revenue'];
-	        echo "</td>";
-	        echo "<td>";
-	        echo $row['toysold'];
-	        echo "</td>";
-	        echo "<td>";
-	        echo $row['toyleft'];
-	        echo "</td>";
-	        echo "<td>";
-	        echo $row['timecheck'];
-	        echo "</td>";
-	        echo "</tr>";
-		}
-		echo "</table>";
-		?>
-	</body>
+$sql = "SELECT * FROM student ORDER BY stuid";
+$stmt = $pdo->prepare($sql);
+//Thiết lập kiểu dữ liệu trả về
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+$stmt->execute();
+$resultSet = $stmt->fetchAll();
+echo '<p>Students information:</p>';
 
-	<footer class="w3-container w3-padding w3-center w3-opacity w3-light-grey w3-xlarge">
-  		<i class="fa fa-facebook-official w3-hover-opacity"></i>
-  		<i class="fa fa-instagram w3-hover-opacity"></i>
-  		<i class="fa fa-snapchat w3-hover-opacity"></i>
-  		<i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  		<i class="fa fa-twitter w3-hover-opacity"></i>
-  		<i class="fa fa-linkedin w3-hover-opacity"></i>
-  		<p class="w3-medium">Designed by <a href="https://www.facebook.com/profile.php?id=100005135791217" target="_blank">Nguyen Van Minh Tri</a></p>
-	</footer>
+?>
+<div id="container">
+<table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>email</th>
+        <th>Class</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      // tạo vòng lặp 
+         //while($r = mysql_fetch_array($result)){
+             foreach ($resultSet as $row) {
+      ?>
+   
+      <tr>
+        <td scope="row"><?php echo $row['stuid'] ?></td>
+        <td><?php echo $row['fname'] ?></td>
+        <td><?php echo $row['email'] ?></td>
+        <td><?php echo $row['classname'] ?></td>
+        
+      </tr>
+     
+      <?php
+        }
+      ?>
+    </tbody>
+  </table>
+</div>
+</body>
 </html>
