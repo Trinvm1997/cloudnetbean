@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<head>Viewing database</head>
+
 	<body>
 		<h1>DATABASE CONNECTION</h1>
 
 		<?php
 		ini_set('display_errors', 1);
-		echo "Hello Cloud computing class 0818!";
 		?>
 
 		<?php
 		if (empty(getenv("DATABASE_URL"))){
-			echo '<p>The DB does not exist</p>';
+			echo '<p>database not found</p>';
 			$pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
 		}  
 		else{
-			echo '<p>The DB exists</p>';
+			echo '<p>database found</p>';
 			echo getenv("dbname");
 			$db = parse_url(getenv("DATABASE_URL"));
 			$pdo = new PDO("pgsql:" . sprintf(
@@ -29,15 +31,14 @@
 
 		$sql = "SELECT * FROM asm2 ORDER BY shopid";
 		$stmt = $pdo->prepare($sql);
-		//Thiết lập kiểu dữ liệu trả về
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
 		$resultSet = $stmt->fetchAll();
-		echo '<p>Students information:</p>';
+		echo '<p>Shop Revenue Report:</p>';
 		?>
 
 		<div id="container">
-			<table class="table table-bordered table-condensed">
+			<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable">
 				<thead>
 				<tr>
 				<th>Shop ID</th>
@@ -49,8 +50,6 @@
 				<tbody>
 
 				<?php
-				// tạo vòng lặp 
-				//while($r = mysql_fetch_array($result)){
 				foreach ($resultSet as $row) {
 				?>
 
