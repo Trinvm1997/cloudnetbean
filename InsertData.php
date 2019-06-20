@@ -20,13 +20,13 @@
 
 	<div class="w3-container w3-display-middle">
 		<table name="InsertData" action="InsertData.php" method="POST" border="1">
-		<tr><td>Shop ID:</td><td><input type="text" name="shopid" /></td></tr>
+		<tr><td>Shop ID:</td><td><input type="text" name="id" /></td></tr>
 		<tr><td>Revenue:</td><td><input type="text" name="revenue" /></td></tr>
 		<tr><td>Toys sold:</td><td><input type="text" name="toysold" /></td></tr>
 		<tr><td>Toys left:</td><td><input type="text" name="toyleft" /></td></tr>
 		<tr><td>Last time checked:</td><td><input type="text" name="timecheck" /></td></tr>
+		<input type="submit" />
 		</table>
-		<input type="submit">
 
 		<?php
 		if (empty(getenv("DATABASE_URL"))){
@@ -49,10 +49,10 @@
 		}
 
 		$sql = "INSERT INTO revenue(shopid, revenue, toysold, toyleft) "
-    	. " VALUES('$_POST[shopid]','$_POST[revenue]','$_POST[toysold]','$_POST[toyleft]')";
+    	. " VALUES('$_POST[id]','$_POST[revenue]','$_POST[toysold]','$_POST[toyleft]')";
 		$stmt = $pdo->prepare($sql);
 		//$stmt->execute();
-			if (is_null($_POST[shopid])) {
+			if (is_null($_POST[sid])) {
 				echo "shopid must be not null";
 			} else {
 			if($stmt->execute() == TRUE){
