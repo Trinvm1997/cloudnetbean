@@ -22,13 +22,14 @@
 
 		<div class="w3-container">
 			<h1>INSERT DATA TO DATABASE</h1>
-			<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable" 
-			name="InsertData" action="InsertData.php" method="POST" >
-			<tr><td>Shop ID:</td><td><input type="text" name="shopid" /></td></tr>
-			<tr><td>Accountant:</td><td><input type="text" name="accountant" /></td></tr>
-			<tr><td>Revenue:</td><td><input type="text" name="revenue" /></td></tr>
-			</table>
-			<input type="submit" />
+			<ul>
+			<form name="InsertData" action="InsertData.php" method="POST" >
+			<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
+			<li>Accountant:</li><li><input type="text" name="accountant" /></li>
+			<li>Revenue:</li><li><input type="text" name="revenue" /></li>
+			<li><input type="submit" /></li>
+			</form>
+			</ul>
 
 			<?php
 			if (empty(getenv("DATABASE_URL"))){
