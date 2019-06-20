@@ -24,7 +24,6 @@
 		<tr><td>Revenue:</td><td><input type="text" name="revenue" /></td></tr>
 		<tr><td>Toys sold:</td><td><input type="text" name="toysold" /></td></tr>
 		<tr><td>Toys left:</td><td><input type="text" name="toyleft" /></td></tr>
-		<tr><td>Last time checked:</td><td><input type="text" name="timecheck" /></td></tr>
 		<input type="submit" />
 		</table>
 
@@ -51,7 +50,7 @@
 		$sql = "INSERT INTO revenue(shopid, revenue, toysold, toyleft) "
     	. " VALUES('$_POST[id]','$_POST[revenue]','$_POST[toysold]','$_POST[toyleft]')";
 		$stmt = $pdo->prepare($sql);
-		$stmt->execute();
+		//$stmt->execute();
 			if (is_null($_POST[id])) {
 				echo "shopid must be not null";
 			} else {
