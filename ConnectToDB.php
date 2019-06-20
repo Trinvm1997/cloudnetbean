@@ -41,7 +41,7 @@
    			));
 		}  
 
-		$sql = "SELECT * FROM revenue ORDER BY shopid";
+		$sql = "SELECT * FROM revenue";
 		$stmt = $pdo->prepare($sql);
 		//Thiết lập kiểu dữ liệu trả về
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
