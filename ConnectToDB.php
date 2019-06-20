@@ -51,19 +51,21 @@
 		$stmt->execute();
 		$resultSet = $stmt->fetchAll();
 
+		echo "revenue information:<br/>";
+		echo "<table>";
 		foreach ($resultSet as $row) {
 			echo $row['shopid'];
-		        echo "    ";
-		        echo $row['revenue'];
-		        echo "    ";
-		        echo $row['toysold'];
-		        echo "    ";
-		        echo $row['toyleft'];
-		        echo "    ";
-		        echo $row['timecheck'];
-		        echo "<br/>";
+	        echo "    ";
+	        echo $row['revenue'];
+	        echo "    ";
+	        echo $row['toysold'];
+	        echo "    ";
+	        echo $row['toyleft'];
+	        echo "    ";
+	        echo $row['timecheck'];
+	        echo "<br/>";
 		}
-
+		echo "</table>";
 
 		?>
 
