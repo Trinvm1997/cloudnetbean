@@ -24,10 +24,6 @@
 		</div>
 
 		<?php
-		ini_set('display_errors', 1);
-		?>
-
-		<?php
 		if (empty(getenv("DATABASE_URL"))){
 			echo '<p>database not found</p>';
 			$pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');

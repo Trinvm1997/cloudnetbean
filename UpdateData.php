@@ -31,11 +31,6 @@
 			</ul>
 
 			<?php
-			ini_set('display_errors', 1);
-			error_reporting(0);
-			?>
-
-			<?php
 			if (empty(getenv("DATABASE_URL"))){
 				echo '<p>The DB does not exist</p>';
 				$pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
@@ -52,29 +47,15 @@
 				));
 			}  
 
-			/*$sql = 'UPDATE asm2 '
-			                . 'SET accountant = '$_POST[accountant]', revenue = '$_POST[revenue]''
-			                . 'WHERE shopid = '$_POST[shopid]'';
-			 
-			      $stmt = $pdo->prepare($sql);
-			      //bind values to the statement
-			       	$stmt->bindValue(shopid, '$_POST[shopid]');
-			        $stmt->bindValue(accountant, '$_POST[accountant]');
-			        $stmt->bindValue(revenue, '$_POST[revenue]');
-			// update data in the database
-			        $stmt->execute();
-
-			// return the number of row affected
-			//return 
-			$stmt->rowCount();*/
-
 			$sql = "UPDATE asm2 SET accountant = '$_POST[accountant]', revenue = '$_POST[revenue]' WHERE shopid = '$_POST[shopid]'";
 			$stmt = $pdo->prepare($sql);
-			if($stmt->execute() == TRUE){
-				echo "Record updated successfully.";
-			}
-			else{
-				echo "Error updating record. ";
+			if (filter_has_var(INPUT_POST, 'submit')){
+				if($stmt->execute() == TRUE){
+					echo "Record updated successfully.";
+				}
+				else{
+					echo "Error updating record. ";
+				}
 			}
 			?>
 		</div>

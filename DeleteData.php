@@ -29,11 +29,6 @@
 			</ul>
 
 			<?php
-			ini_set('display_errors', 1);
-			error_reporting(0);
-			?>
-
-			<?php
 			if (empty(getenv("DATABASE_URL"))){
 				echo '<p>The DB does not exist</p>';
 				$pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
@@ -52,12 +47,13 @@
 
 			$sql = "DELETE FROM asm2 WHERE shopid = '$_POST[shopid]'";
 			$stmt = $pdo->prepare($sql);
-			if($stmt->execute() == TRUE){
-				echo "Record deleted successfully.";
-			} else {
-				echo "Error deleting record: ";
+			if (filter_has_var(INPUT_POST, 'submit')){
+				if($stmt->execute() == TRUE){
+					echo "Record deleted successfully.";
+				} else {
+					echo "Error deleting record: ";
+				}
 			}
-
 			?>
 		</div>
 
