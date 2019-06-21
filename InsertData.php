@@ -65,7 +65,6 @@
 			. " VALUES('$_POST[shopid]','$_POST[accountant]','$_POST[revenue]')";
 			$stmt = $pdo->prepare($sql);
 			//$stmt->execute();
-			if (filter_has_var(INPUT_POST, 'submit')){
 				if (is_null($_POST[shopid])) {
 					echo "StudentID must be not null";
 				}
@@ -77,7 +76,6 @@
 						echo "Error inserting record: ";
 					}
 				}
-			}
 			?>
 		</div>
 

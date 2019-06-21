@@ -50,6 +50,7 @@
 			$sql = "UPDATE asm2 SET accountant = '$_POST[accountant]', revenue = '$_POST[revenue]' WHERE shopid = '$_POST[shopid]'";
 			$stmt = $pdo->prepare($sql);
 			if (filter_has_var(INPUT_POST, 'submit')){
+				$stmt->execute();
 				if($stmt->execute() == TRUE){
 					echo "Record updated successfully.";
 				}
