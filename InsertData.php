@@ -65,15 +65,17 @@
 			. " VALUES('$_POST[shopid]','$_POST[accountant]','$_POST[revenue]')";
 			$stmt = $pdo->prepare($sql);
 			//$stmt->execute();
-			if (is_null($_POST[shopid])) {
-				echo "StudentID must be not null";
-			}
-			else{
-				if($stmt->execute() == TRUE){
-					echo "Record inserted successfully.";
+			if (filter_has_var(INPUT_POST, 'submit')){
+				if (is_null($_POST[shopid])) {
+					echo "StudentID must be not null";
 				}
 				else{
-					echo "Error inserting record: ";
+					if($stmt->execute() == TRUE){
+						echo "Record inserted successfully.";
+					}
+					else{
+						echo "Error inserting record: ";
+					}
 				}
 			}
 			?>
