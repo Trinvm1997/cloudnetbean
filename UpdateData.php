@@ -49,8 +49,7 @@
 
 			$sql = "UPDATE asm2 SET accountant = '$_POST[accountant]', revenue = '$_POST[revenue]' WHERE shopid = '$_POST[shopid]'";
 			$stmt = $pdo->prepare($sql);
-			if (filter_has_var(INPUT_POST, 'submit')){
-				$stmt->execute();
+			if(is_null($_POST[accountant])){
 				if($stmt->execute() == TRUE){
 					echo "Record updated successfully.";
 				}
@@ -58,7 +57,7 @@
 					echo "Error updating record. ";
 				}
 			}
-			?>
+		?>
 		</div>
 
 		<footer class="w3-container w3-padding w3-center w3-opacity w3-light-grey w3-xlarge">
