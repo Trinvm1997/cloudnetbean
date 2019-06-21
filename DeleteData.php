@@ -47,7 +47,7 @@
 
 			$sql = "DELETE FROM asm2 WHERE shopid = '$_POST[shopid]'";
 			$stmt = $pdo->prepare($sql);
-			if (filter_has_var(INPUT_POST, 'submit')){
+			if (is_null($_POST[accountant]) == FALSE)){
 				if($stmt->execute() == TRUE){
 					echo "Record deleted successfully.";
 				} else {
