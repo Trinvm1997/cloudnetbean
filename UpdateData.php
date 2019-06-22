@@ -59,7 +59,7 @@
 		?>
 		</div>
 
-		<footer class="w3-container w3-padding w3-center w3-opacity w3-black w3-xlarge">
+		<footer class="w3-container w3-padding w3-center w3-black w3-xlarge">
 			<i class="fa fa-facebook-official w3-hover-opacity"></i>
 			<i class="fa fa-instagram w3-hover-opacity"></i>
 			<i class="fa fa-snapchat w3-hover-opacity"></i>
