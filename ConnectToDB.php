@@ -50,8 +50,8 @@
 		echo '<p>Shop Revenue Report:</p>';
 		?>
 
-		<div class="w3-responsive ">
-			<table class="w3-container w3-table w3-striped w3-bordered w3-border w3-hoverable">
+		<div class="w3-responsive w3-container">
+			<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable" border="1">
 				<thead>
 				<tr>
 				<th>Shop ID</th>
