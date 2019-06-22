@@ -27,7 +27,7 @@
 			<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
 			<li>Accountant:</li><li><input type="text" name="accountant" /></li>
 			<li>Revenue:</li><li><input type="text" name="revenue" /></li>
-			<li><input type="submit" /></li>
+			<li><input type="submit" value="INSERT"/></li>
 			</form>
 			</ul>
 

@@ -24,7 +24,7 @@
 			<ul style="list-style-type: none">
 			<form name="DeleteData" action="DeleteData.php" method="POST" >
 			<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
-			<li><input type="submit" value="INSERT" class="w3-hover-"/></li>
+			<li><input type="submit" value="DELETE" /></li>
 			</form>
 			</ul>
 
