@@ -25,11 +25,9 @@
 
 		<?php
 		if (empty(getenv("DATABASE_URL"))){
-			echo '<p>database not found</p>';
 			$pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
 		}  
 		else{
-			echo '<p>database found</p>';
 			echo getenv("dbname");
 			$db = parse_url(getenv("DATABASE_URL"));
 			$pdo = new PDO("pgsql:" . sprintf(
@@ -47,7 +45,6 @@
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
 		$resultSet = $stmt->fetchAll();
-		echo '<p>Shop Revenue Report:</p>';
 		?>
 
 		<div class="w3-responsive w3-container">
