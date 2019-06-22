@@ -64,7 +64,7 @@
 			<i class="fa fa-pinterest-p w3-hover-opacity"></i>
 			<i class="fa fa-twitter w3-hover-opacity"></i>
 			<i class="fa fa-linkedin w3-hover-opacity"></i>
-			<p class="w3-medium">Designed by <a href="https://www.facebook.com/profile.php?id=100005135791217" target="_blank">Nguyen Van Minh Tri</a></p>
+			<p class="w3-medium w3-text-white">Designed by <a href="https://www.facebook.com/profile.php?id=100005135791217" target="_blank">Nguyen Van Minh Tri</a></p>
 		</footer>
 	</body>
 </html>
