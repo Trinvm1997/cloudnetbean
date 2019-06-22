@@ -13,9 +13,9 @@
 			<div class="w3-bar w3-black w3-card">
 				<a href="index.php" class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue">HOME</a>
 				<a href="ConnectToDB.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hover-text-blue">VIEW</a>
-    			<a href="InsertData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right w3-hover-text-blue">INSERT</a>
-    			<a href="UpdateData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right w3-hover-text-blue">UPDATE</a>
-    			<a href="DeleteData.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right w3-hover-text-blue">DELETE</a>
+    			<a href="InsertData.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hover-text-blue">INSERT</a>
+    			<a href="UpdateData.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hover-text-blue">UPDATE</a>
+    			<a href="DeleteData.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hover-text-blue">DELETE</a>
 			</div>
 		</div>
 
@@ -24,7 +24,7 @@
 			<ul style="list-style-type: none">
 			<form name="DeleteData" action="DeleteData.php" method="POST" >
 			<li>Shop ID:</li><li><input type="text" name="shopid" /></li>
-			<li><input type="submit" /></li>
+			<li><input type="submit" value="INSERT" class="w3-hover-"/></li>
 			</form>
 			</ul>
 
@@ -47,7 +47,7 @@
 
 			$sql = "DELETE FROM asm2 WHERE shopid = '$_POST[shopid]'";
 			$stmt = $pdo->prepare($sql);
-			if (is_null($_POST[accountant]) == FALSE)){
+			if (is_null($_POST[accountant]) == FALSE){
 				if($stmt->execute() == TRUE){
 					echo "Record deleted successfully.";
 				} else {
